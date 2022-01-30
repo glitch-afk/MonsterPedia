@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Cardlist from "./components/card-list/Cardlist";
 
 function App() {
   const [monsters, setMonsters] = useState([]);
@@ -10,9 +11,11 @@ function App() {
       .then((users) => setMonsters(users));
   }, []);
 
-  console.log(monsters);
-
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Cardlist monsters={monsters} />
+    </div>
+  );
 }
 
 export default App;
